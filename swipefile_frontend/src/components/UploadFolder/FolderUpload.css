@@ -1,0 +1,239 @@
+body {
+    background-image: url('/src/components/assets/nature.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    backdrop-filter: blur(10px);
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+    color: #333;
+}
+
+.side-bar {
+    width: 250px;
+    background-color: #fff;
+    border-radius: 20px;
+    margin: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    max-height: calc(100vh - 40px);
+    align-items: center;
+    box-shadow: 0 10px 30px rgba(3, 0, 0, 0.15);
+}
+
+.sidebar-content {
+    overflow-y: auto;
+    flex-grow: 1;
+    padding-right: 5px;
+    margin-right: -10px;
+}
+
+.main-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+.main-title {
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.file-preview-wrapper {
+    width: 100%;
+    max-width: 600px;
+    height: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.file-preview-container {
+    width: 500px;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+.file-date {
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: #ffffff;
+    margin-top: 10px;
+}
+
+.file-preview {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    flex-grow: 1;
+    padding: 60px;
+}
+
+.file-name {
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin: 0;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.file-preview img {
+    max-width: 70%;
+    max-height: 70%;
+    object-fit: contain;
+    margin: auto;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.action-buttons button {
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    background-color: #f0f0f0;
+    color: transparent;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    position: relative;
+    overflow: hidden;
+    background-size: 24px 24px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.action-buttons button:nth-child(1) {
+    background-image: url('/src/components/assets/close-svgrepo-com.svg');
+}
+
+.action-buttons button:nth-child(2) {
+    background-image: url('/src/components/assets/undo-svgrepo-com.svg');
+}
+
+.action-buttons button:nth-child(3) {
+    background-image: url('/src/components/assets/check-svgrepo-com.svg');
+}
+
+.action-buttons button:nth-child(1):hover {
+    background-color: #F44336;
+}
+
+.action-buttons button:nth-child(2):hover {
+    background-color: #FFC107;
+}
+
+.action-buttons button:nth-child(3):hover {
+    background-color: #4CAF50;
+}
+
+.sidebar-list {
+    margin-top: 5px;
+    overflow-y: auto;
+    max-height: calc(100vh - 150px);
+}
+
+.sidebar-list h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+    z-index: 1;
+    padding: 10px 0;
+}
+
+.sidebar-list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.upload-folder {
+    width: 100%;
+    height: 50px;
+    border-radius: 10px;
+    background-color: #f0f0f0;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.upload-folder input[type="file"] {
+    display: none;
+}
+
+.upload-folder label {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: inherit;
+    background-color: inherit;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.upload-folder label:hover {
+    background-color: #e0e0e0;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 600px) {
+    .file-preview-container {
+        max-width: 100%;
+        max-height: 100%;
+        padding: 10px;
+    }
+
+    .file-name {
+        font-size: 16px;
+        padding: 3px 8px;
+    }
+
+    .file-date {
+        font-size: 12px;
+        margin-top: 5px;
+    }
+}
